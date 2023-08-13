@@ -39,4 +39,5 @@ body {
 
 .board > div:hover {
     background-color: rgb(78, 78, 78);
+    cursor: pointer;
 }

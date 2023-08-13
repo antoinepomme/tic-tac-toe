@@ -39,7 +39,9 @@ const gameboard = (() => {
                 boardCell.className = board[i][j];
                 boardContainer.append(boardCell);
                 boardCell.addEventListener('click', () => {
-                    markCell(boardCell.id);
+                    if (boardCell.className === "empty") {
+                        markCell(boardCell.id);
+                    }
                     display();
                 });
             }
