@@ -28,6 +28,32 @@ const gameboard = (() => {
         turn++;
     };
 
+    const getResult = () => {
+        if ((board[0][0] === player1.mark && board [0][1] === player1.mark && board[0][2] === player1.mark) ||
+         (board[1][0] === player1.mark && board [1][1] === player1.mark && board[1][2] === player1.mark) ||
+         (board[2][0] === player1.mark && board [2][1] === player1.mark && board[2][2] === player1.mark) || 
+         (board[0][0] === player1.mark && board [1][0] === player1.mark && board[2][0] === player1.mark) ||
+         (board[0][1] === player1.mark && board [1][1] === player1.mark && board[2][1] === player1.mark) ||
+         (board[0][2] === player1.mark && board [1][2] === player1.mark && board[2][2] === player1.mark) ||
+         (board[0][0] === player1.mark && board [1][1] === player1.mark && board[2][2] === player1.mark) || 
+         (board[2][2] === player1.mark && board [1][1] === player1.mark && board[0][0] === player1.mark)) {
+            return "Player 1 wins !";
+        } else if ((board[0][0] === player2.mark && board [0][1] === player2.mark && board[0][2] === player2.mark) ||
+        (board[1][0] === player2.mark && board [1][1] === player2.mark && board[1][2] === player2.mark) ||
+        (board[2][0] === player2.mark && board [2][1] === player2.mark && board[2][2] === player2.mark) || 
+        (board[0][0] === player2.mark && board [1][0] === player2.mark && board[2][0] === player2.mark) ||
+        (board[0][1] === player2.mark && board [1][1] === player2.mark && board[2][1] === player2.mark) ||
+        (board[0][2] === player2.mark && board [1][2] === player2.mark && board[2][2] === player2.mark) ||
+        (board[0][0] === player2.mark && board [1][1] === player2.mark && board[2][2] === player2.mark) || 
+        (board[2][2] === player2.mark && board [1][1] === player2.mark && board[0][0] === player2.mark)) {
+            return "Player 2 wins !";
+        } else if (turn == 10) {
+            return "Tie";
+        } else {
+            return 0;
+        }
+    };
+
     const display = () => {
         while (boardContainer.firstChild) {
             boardContainer.removeChild(boardContainer.firstChild);
@@ -46,6 +72,10 @@ const gameboard = (() => {
                 });
             }
         }
+        if (getResult()) {
+            //idk
+        }
+ 
     };
 
     return {display};
