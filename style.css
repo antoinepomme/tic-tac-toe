@@ -16,9 +16,25 @@ body {
     grid-template: 10vh 10vh 10vh / 10vh 10vh 10vh;
 }
 
-.board > div {
+.empty {
     background-color: grey;
     border: solid black 1px;
+}
+
+.x {
+    background-color: grey;
+    border: solid black 1px;
+    background-image: url(images/x-white.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.o {
+    background-color: grey;
+    border: solid black 1px;
+    background-image: url(images/o-white.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .board > div:hover {
